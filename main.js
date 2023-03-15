@@ -1,14 +1,14 @@
 canvas = document.getElementById('myCanvas');
 ctx = canvas.getContext("2d");
 
-greencar_x = 75;
-greencar_y = 100; 
+greencar_width = 75;
+greencar_height = 100; 
 
-backgroundImage = "parking.png";
-greencarImage = "car2.png";
+background_image = "parking.png";
+greencar_image = "car2.png";
 
-greencar_x = 5;
-greencar_y = 225
+greencar_X = 5;
+greencar_Y = 225
 
 function add() {
 	background_imgTag = new Image();
@@ -16,17 +16,17 @@ function add() {
     background_imgTag.src = background_image;
 
     greencar_imgTag = new Image();
-    greencar_imgTag.onload = uploadgreencar;
+    greencar_imgTag.onload = uploadGreenCar;
     greencar_imgTag.src = greencar_image;
 }
 
 function uploadBackground() {
-	ctx.drawImage(greencar_imgTag,greencar_x,greencar_y,greencar_width,greencar_height);
+	ctx.drawImage(background_imgTag,0,0,canvas.width,canvas.height);
 
 }
 
 function uploadGreenCar() {
-	ctx.drawImage(greencar_imgTag,greencar_x,greencar_y,greencar_width,greencar_height);
+	ctx.drawImage(greencar_imgTag,greencar_X,greencar_Y,greencar_width,greencar_height);
 
 	
 }
@@ -67,44 +67,44 @@ function myKeyDown(e)
 
 function up()
 {
-	if(roverY >=0)
+	if(greencar_Y >=0)
     {
-        roverY = roverY - 10;
-        console.log("Quando direcional cima for pressionada,  x = " + roverX + " | y = " +roverY);
+        greencar_Y = greencar_Y - 10;
+        console.log("Quando direcional cima for pressionada,  x = " + greencar_X + " | y = " +greencar_Y);
          uploadBackground();
-         uploadrover();
+         uploadGreenCar();
     }
 }
 
 function down()
 {
-	if(roverY <=500)
+	if(greencar_Y <=350)
     {
-        roverY = roverY + 10;
-        console.log("Quando direcional baixo for pressionada,  x = " + roverX + " | y = " +roverY);
+        greencar_Y = greencar_Y + 10;
+        console.log("Quando direcional baixo for pressionada,  x = " + greencar_X + " | y = " +greencar_Y);
          uploadBackground();
-         uploadrover();
+         uploadGreenCar();
     }
 }
 
 function left()
 {
-	if(roverX >=0)
+	if(greencar_X >=0)
     {
-        roverX = roverX - 10;
-        console.log("Quando direcional esquerda for pressionada,  x = " + roverX + " | y = " +roverY);
+        greencar_X = greencar_X - 10;
+        console.log("Quando direcional esquerda for pressionada,  x = " + greencar_X + " | y = " +greencar_Y);
          uploadBackground();
-         uploadrover();
+         uploadGreenCar();
     }
 }
 
 function right()
 {
-	if(roverX <=700)
+	if(greencar_X <=750)
     {
-        roverX = roverX - 10;
-        console.log("Quando direcional direita for pressionada,  x = " + roverX + " | y = " +roverY);
+        greencar_X = greencar_X + 10;
+        console.log("Quando direcional direita for pressionada,  x = " + greencar_X + " | y = " +greencar_Y);
          uploadBackground();
-         uploadrover();
+         uploadGreenCar();
     }
 }
